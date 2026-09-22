@@ -70,7 +70,7 @@ SOURCES=
 
 # Like SOURCES, but for include directories. Value should be paths to
 # directories (without a leading -I).
-INCLUDES=
+INCLUDES=../shared/include
 
 # Add additional defines to the build process (without a leading -D).
 DEFINES+=CY_CORTEX_M4_APPL_ADDR=0x10140000

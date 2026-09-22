@@ -45,9 +45,7 @@
 #include "cybsp.h"
 #include "cy_retarget_io.h"
 
-#define SPI_PER SCB6
-#define PRINT(...) printf(__VA_ARGS__); __enable_irq();
-
+#include "system_config.h"
 
 void init_spi(void) {
 
