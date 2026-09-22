@@ -7,7 +7,7 @@
  *    used for each peripheral, pins, rates, etc.
  */
 
-
+#include <stdio.h>
  
 ////////////// SPI INTERFACES ////////////////////
 #define SPI_DRV SCB5 // SPI bus to use for motor driver
