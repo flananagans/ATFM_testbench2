@@ -987,7 +987,7 @@
                 <Personality template="spi" version="3.0" instance="X2tor_FE5pk">
                     <Block location="scb[5]" locked="true"/>
                     <Parameters>
-                        <Param id="ApiMode" value="HIGH_LEVEL"/>
+                        <Param id="ApiMode" value="LOW_LEVEL"/>
                         <Param id="BitsOrder" value="MSB_FIRST"/>
                         <Param id="DataRate" value="250"/>
                         <Param id="DeassertSelectLine" value="false"/>
@@ -1031,7 +1031,7 @@
                 <Personality template="spi" version="3.0" instance="kKS7h8nyejg">
                     <Block location="scb[6]" locked="true"/>
                     <Parameters>
-                        <Param id="ApiMode" value="HIGH_LEVEL"/>
+                        <Param id="ApiMode" value="LOW_LEVEL"/>
                         <Param id="BitsOrder" value="MSB_FIRST"/>
                         <Param id="DataRate" value="250"/>
                         <Param id="DeassertSelectLine" value="false"/>
@@ -1272,6 +1272,10 @@
                     <Port name="scb[5].spi_clk[0]"/>
                 </Net>
                 <Net>
+                    <Port name="ioss[0].port[5].pin[3].digital_inout[0]"/>
+                    <Port name="scb[5].spi_select0[0]"/>
+                </Net>
+                <Net>
                     <Port name="ioss[0].port[12].pin[0].digital_inout[0]"/>
                     <Port name="scb[6].spi_mosi[0]"/>
                 </Net>
@@ -1282,6 +1286,10 @@
                 <Net>
                     <Port name="ioss[0].port[12].pin[2].digital_inout[0]"/>
                     <Port name="scb[6].spi_clk[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[12].pin[3].digital_inout[0]"/>
+                    <Port name="scb[6].spi_select0[0]"/>
                 </Net>
                 <Net>
                     <Port name="peri[0].div_8[2].clk[0]"/>

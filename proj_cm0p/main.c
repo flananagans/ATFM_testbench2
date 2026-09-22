@@ -39,7 +39,7 @@
 * of such system or application assumes all risk of such use and in doing
 * so agrees to indemnify Cypress against all liability.
 *******************************************************************************/
-
+#include "cyhal.h"
 #include "cy_pdl.h"
 #include "cycfg.h"
 #include "cybsp.h"
@@ -49,11 +49,17 @@
 #define PRINT(...) printf(__VA_ARGS__); __enable_irq();
 
 /* Allocate context for SPI operation */
-cy_stc_scb_spi_context_t spi_drv_context;
+cy_stc_scb_spi_context_t spi_drv_context; // only required for high-level API
 
 void init_spi(void) {
 
-    (void) Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, &spi_drv_context);
+    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, &spi_drv_context);
+
+    if(init_status != CY_SCB_SPI_SUCCESS) {
+        PRINT("SPI INIT FAILED\r\n");
+    }
+
+    Cy_SCB_SPI_SetActiveSlaveSelect(SPI_DRV, CY_SCB_SPI_SLAVE_SELECT0);
 
     /* Enable SPI to operate */
     Cy_SCB_SPI_Enable(SPI_DRV);
@@ -61,7 +67,6 @@ void init_spi(void) {
 }
 
 void test_spi(void) {
-    uint8_t rxBuffer[3];
     uint8_t txBuffer[3];
 
     /* Initialize txBuffer with command to transfer */
@@ -69,9 +74,15 @@ void test_spi(void) {
     txBuffer[1] = 0x00U;
     txBuffer[2] = 0x00U;
     
-    (void) Cy_SCB_SPI_Transfer(SPI_DRV, txBuffer, rxBuffer, sizeof(txBuffer), &spi_drv_context);
+    PRINT("SPI transfer start!\r\n");
+
+    /* Start transfer */
+    Cy_SCB_SPI_WriteArrayBlocking(SPI_DRV, txBuffer, sizeof(txBuffer));
+    
     /* Blocking wait for transfer completion */
-    while (0UL != (CY_SCB_SPI_TRANSFER_ACTIVE & Cy_SCB_SPI_GetTransferStatus(SPI_DRV, &spi_drv_context))) {
+    while (!Cy_SCB_SPI_IsTxComplete(SPI_DRV))
+    {
+        PRINT("SPI transferring...\r\n");
     }
 
     PRINT("SPI transfer done!\r\n");
