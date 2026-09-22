@@ -241,3 +241,5 @@
 10050	10387	8118064093377296	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/libraries_shared/mtb-pdl-cat1/utils/TOOLCHAIN_GCC_ARM/mtb_stdlib_stubs.o	7254138aec480d2
 10645	10979	8118064099306815	build/APP_CY8CEVAL-062S2/Debug/proj_cm0p.elf	fcc31f6aafa47f83
 10067	10645	8118064093532533	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/libraries_shared/retarget-io/source/cy_retarget_io.o	43375bd7c1ffa6
+58	493	8118066937244394	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/local/main.o	8445026f03bf9667
+493	866	8118066941608074	build/APP_CY8CEVAL-062S2/Debug/proj_cm0p.elf	fcc31f6aafa47f83

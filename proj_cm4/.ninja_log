@@ -241,3 +241,5 @@
 10357	10962	8118064232262267	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm4/build/Debug/libraries_shared/mtb-pdl-cat1/drivers/source/cy_usbfs_dev_drv_io.o	4b332d23dd33f2c4
 10369	11044	8118064232382726	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm4/build/Debug/libraries_shared/mtb-pdl-cat1/drivers/source/cy_usbfs_dev_drv_io_dma.o	5755a10a3740f668
 11172	11497	8118064240345548	build/APP_CY8CEVAL-062S2/Debug/proj_cm4.elf	9bf1eecac4f3e2c9
+51	481	8118066964261291	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm4/build/Debug/local/main.o	1721bd93273baf4d
+481	787	8118066968567127	build/APP_CY8CEVAL-062S2/Debug/proj_cm4.elf	9bf1eecac4f3e2c9

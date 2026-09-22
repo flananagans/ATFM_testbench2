@@ -45,7 +45,48 @@
 #include "cybsp.h"
 #include "cy_retarget_io.h"
 
+#define SPI_PER SCB6
 #define PRINT(...) printf(__VA_ARGS__); __enable_irq();
+
+
+void init_spi(void) {
+
+    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_PER, &scb_5_config, NULL);
+
+    if(init_status != CY_SCB_SPI_SUCCESS) {
+        PRINT("SPI INIT FAILED\r\n");
+    }
+
+    Cy_SCB_SPI_SetActiveSlaveSelect(SPI_PER, CY_SCB_SPI_SLAVE_SELECT0);
+
+    /* Enable SPI to operate */
+    Cy_SCB_SPI_Enable(SPI_PER);
+    __enable_irq();
+}
+
+void test_spi(void) {
+    uint8_t txBuffer[3];
+
+    /* Initialize txBuffer with command to transfer */
+    txBuffer[0] = 0x00U;
+    txBuffer[1] = 0x00U;
+    txBuffer[2] = 0x00U;
+    
+    PRINT("SPI transfer start!\r\n");
+
+    /* Start transfer */
+    Cy_SCB_SPI_WriteArrayBlocking(SPI_PER, txBuffer, sizeof(txBuffer));
+    
+    /* Blocking wait for transfer completion */
+    while (!Cy_SCB_SPI_IsTxComplete(SPI_PER))
+    {
+        PRINT("SPI transferring...\r\n");
+    }
+
+    PRINT("SPI transfer done!\r\n");
+
+}
+
 
 int main(void) {
     cy_rslt_t result;
@@ -68,6 +109,10 @@ int main(void) {
     }
 
     PRINT("Hello from CM4!\r\n");
+
+
+    init_spi();
+    test_spi();
 
     for (;;) {
     }

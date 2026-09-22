@@ -48,12 +48,9 @@
 #define SPI_DRV SCB5
 #define PRINT(...) printf(__VA_ARGS__); __enable_irq();
 
-/* Allocate context for SPI operation */
-cy_stc_scb_spi_context_t spi_drv_context; // only required for high-level API
-
 void init_spi(void) {
 
-    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, &spi_drv_context);
+    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, NULL); // context not required for low-level API
 
     if(init_status != CY_SCB_SPI_SUCCESS) {
         PRINT("SPI INIT FAILED\r\n");
