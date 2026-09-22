@@ -43,9 +43,43 @@
 #include "cy_pdl.h"
 #include "cycfg.h"
 #include "cybsp.h"
+#include "cy_retarget_io.h"
 
-int main(void)
-{
+#define SPI_DRV SCB5
+#define PRINT(...) printf(__VA_ARGS__); __enable_irq();
+
+/* Allocate context for SPI operation */
+cy_stc_scb_spi_context_t spi_drv_context;
+
+void init_spi(void) {
+
+    (void) Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, &spi_drv_context);
+
+    /* Enable SPI to operate */
+    Cy_SCB_SPI_Enable(SPI_DRV);
+    __enable_irq();
+}
+
+void test_spi(void) {
+    uint8_t rxBuffer[3];
+    uint8_t txBuffer[3];
+
+    /* Initialize txBuffer with command to transfer */
+    txBuffer[0] = 0x00U;
+    txBuffer[1] = 0x00U;
+    txBuffer[2] = 0x00U;
+    
+    (void) Cy_SCB_SPI_Transfer(SPI_DRV, txBuffer, rxBuffer, sizeof(txBuffer), &spi_drv_context);
+    /* Blocking wait for transfer completion */
+    while (0UL != (CY_SCB_SPI_TRANSFER_ACTIVE & Cy_SCB_SPI_GetTransferStatus(SPI_DRV, &spi_drv_context))) {
+    }
+
+    PRINT("SPI transfer done!\n");
+
+}
+
+
+int main(void) {
     /* Enable global interrupts */
     __enable_irq();
     
@@ -53,18 +87,27 @@ int main(void)
 
     /* Initialize the device and board peripherals */
     result = cybsp_init() ;
-    if (result != CY_RSLT_SUCCESS)
-    {
+    if (result != CY_RSLT_SUCCESS) {
         CY_ASSERT(0);
     }
 
     /* Enable CM4. CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
 
-    for (;;)
-    {
-        Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+    /* Retarget stdin and stdout to the debug UART port */
+    result = cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
+    if (result != CY_RSLT_SUCCESS) {
+        CY_ASSERT(0);
     }
+
+    PRINT("Hello from CM0!\n");
+
+    init_spi();
+    test_spi();
+
+    for (;;) {
+    }
+
 }
 
 /* [] END OF FILE */

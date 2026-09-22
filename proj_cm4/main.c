@@ -43,24 +43,33 @@
 #include "cy_pdl.h"
 #include "cyhal.h"
 #include "cybsp.h"
+#include "cy_retarget_io.h"
 
+#define PRINT(...) printf(__VA_ARGS__); __enable_irq();
 
-int main(void)
-{
+int main(void) {
     cy_rslt_t result;
 
     /* Initialize the device and board peripherals */
     result = cybsp_init() ;
-    if (result != CY_RSLT_SUCCESS)
-    {
+    if (result != CY_RSLT_SUCCESS) {
         CY_ASSERT(0);
     }
 
     /* Enable global interrupts */
     __enable_irq();
+	
+	/* Retarget stdio for printf to uart over usb */
+	result = cy_retarget_io_init_fc(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX,
+		CYBSP_DEBUG_UART_CTS,CYBSP_DEBUG_UART_RTS,CY_RETARGET_IO_BAUDRATE);
 
-    for (;;)
-    {
+    if (result != CY_RSLT_SUCCESS) {
+        CY_ASSERT(0);
+    }
+
+    PRINT("Hello from CM0!\n");
+
+    for (;;) {
     }
 }
 
