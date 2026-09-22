@@ -10,9 +10,14 @@
 
  
 ////////////// SPI INTERFACES ////////////////////
-#define SPI_DRV SCB5
-#define SPI_PER SCB6
+#define SPI_DRV SCB5 // SPI bus to use for motor driver
+#define SPI_DRV_CONFIG scb_5_config // SPI configuration for motor driver
 
+#define SPI_PER SCB6 // SPI bus to use for peripheral (encoder, FPGA, etc.)
+#define SPI_PER_CONFIG scb_6_config // SPI configuration for peripheral
+
+
+////////////// PRINTING FUNCTION /////////////////
 #define PRINT(...) printf(__VA_ARGS__); __enable_irq();
 
 

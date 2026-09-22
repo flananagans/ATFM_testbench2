@@ -49,7 +49,7 @@
 
 void init_spi(void) {
 
-    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_DRV, &scb_5_config, NULL); // context not required for low-level API
+    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_DRV, &SPI_DRV_CONFIG, NULL); // context not required for low-level API
 
     if(init_status != CY_SCB_SPI_SUCCESS) {
         PRINT("SPI INIT FAILED\r\n");

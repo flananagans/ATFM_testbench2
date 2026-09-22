@@ -49,7 +49,7 @@
 
 void init_spi(void) {
 
-    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_PER, &scb_5_config, NULL);
+    cy_en_scb_spi_status_t init_status = Cy_SCB_SPI_Init(SPI_PER, &SPI_PER_CONFIG, NULL);
 
     if(init_status != CY_SCB_SPI_SUCCESS) {
         PRINT("SPI INIT FAILED\r\n");
