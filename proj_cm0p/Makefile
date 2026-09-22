@@ -73,7 +73,7 @@ SOURCES=
 INCLUDES=
 
 # Add additional defines to the build process (without a leading -D).
-DEFINES+=CY_CORTEX_M4_APPL_ADDR=CY_FLASH_BASE+0x4400U
+DEFINES+=CY_CORTEX_M4_APPL_ADDR=0x10140000
 
 # Select softfp or hardfp floating point. Default is softfp.
 VFP_SELECT=
