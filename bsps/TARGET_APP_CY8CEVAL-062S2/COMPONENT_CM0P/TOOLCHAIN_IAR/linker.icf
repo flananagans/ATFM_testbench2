@@ -69,11 +69,11 @@ if (!isdefinedsymbol(__HEAP_SIZE)) {
  */
 /* RAM */
 define symbol __ICFEDIT_region_IRAM1_start__ = 0x08000000;
-define symbol __ICFEDIT_region_IRAM1_end__   = 0x08003FFF;
+define symbol __ICFEDIT_region_IRAM1_end__   = 0x0803FFFF;
 
 /* Flash */
 define symbol __ICFEDIT_region_IROM1_start__ = 0x10000000;
-define symbol __ICFEDIT_region_IROM1_end__   = 0x100043FF;
+define symbol __ICFEDIT_region_IROM1_end__   = 0x1013FFFF;
 
 /* The following symbols define a 32K flash region used for EEPROM emulation.
  * This region can also be used as the general purpose flash.
