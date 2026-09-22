@@ -74,7 +74,7 @@ void test_spi(void) {
     while (0UL != (CY_SCB_SPI_TRANSFER_ACTIVE & Cy_SCB_SPI_GetTransferStatus(SPI_DRV, &spi_drv_context))) {
     }
 
-    PRINT("SPI transfer done!\n");
+    PRINT("SPI transfer done!\r\n");
 
 }
 
@@ -95,12 +95,12 @@ int main(void) {
     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
 
     /* Retarget stdin and stdout to the debug UART port */
-    result = cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
+    result = cy_retarget_io_init(P5_5, P5_4, CY_RETARGET_IO_BAUDRATE);
     if (result != CY_RSLT_SUCCESS) {
         CY_ASSERT(0);
     }
 
-    PRINT("Hello from CM0!\n");
+    PRINT("Hello from CM0!\r\n");
 
     init_spi();
     test_spi();

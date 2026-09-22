@@ -67,7 +67,7 @@ int main(void) {
         CY_ASSERT(0);
     }
 
-    PRINT("Hello from CM4!\n");
+    PRINT("Hello from CM4!\r\n");
 
     for (;;) {
     }
