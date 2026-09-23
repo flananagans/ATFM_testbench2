@@ -11,11 +11,17 @@
 #include "drv8718s_interface.h"
 #include "system_config.h"
 
+
+////////////// VARIABLES //////////////////////
+bool driver_enabled = 0; // 1 for enabled
+uint32_t driver_status = 0; // [0,0,STAT1,STAT2] 
+bool driver_fault = 0; // 1 for fault
+
 /************* PRIVATE FUNCTION DECLARATIONS **************/
 
 /////////////// STARTUP //////////////////////
-bool drv8718s_configure();
-void drv8718s_init_gpio();
+bool drv8718s_configure(void);
+void drv8718s_init_gpio(void);
 void drv8718s_configure_nflt_pin(void);
 void drv8718s_configure_pwm_mapping(void);
 void drv8718s_enable_and_configure(void);

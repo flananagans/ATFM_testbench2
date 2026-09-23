@@ -11,6 +11,11 @@
  *    enabling/disabling driver, etc.
  */
 
+ ////////////// VARIABLES ////////////////////
+extern bool driver_enabled;
+extern bool driver_fault;
+extern uint32_t driver_status;
+
 /////////////// STARTUP //////////////////////
 bool drv8718s_init(void);
 
@@ -125,11 +130,11 @@ void drv8718s_print_status(void);
                               IC_STAT1_OT_WD_AGD)
                               
 /* ============= IC_CTRL1 Register (0x07) Bit Definitions ============= */
-#define IC_CTRL1_EN_DRV   (1 << 7)   // ✅ correct
-#define IC_CTRL1_EN_OLSC  (1 << 6)   // ✅ correct
+#define IC_CTRL1_EN_DRV   (1 << 7)   // correct
+#define IC_CTRL1_EN_OLSC  (1 << 6)   // correct
 #define IC_CTRL1_BRG_MODE     (0x00)     //
 #define IC_CTRL1_LOCK     (0x5)     // bits [3:1]
-#define IC_CTRL1_CLR_FLT  (1 << 0)   // ✅ correct
+#define IC_CTRL1_CLR_FLT  (1 << 0)   // correct
 
 /* ============= IC_CTRL2 Register (0x08) Bit Definitions ============= */
 #define IC_CTRL2_WD_RST     (1 << 0)    /* Watchdog reset */

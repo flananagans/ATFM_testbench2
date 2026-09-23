@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "cy_pdl.h"
+#include "cycfg_peripherals.h"  /* Include auto-generated configs */
 
 /**
  *  Interface code for configuring and updating
@@ -22,6 +23,6 @@ bool pwm_init(void);
 
 /////////////// RUNNING //////////////////////
 //void pwm_update_callback(void); // primary control callback
-void update_pwm_duty(float duty_a_pct, float duty_b_pct);
+void update_pwm_duty(float da, float db);
 
 #endif

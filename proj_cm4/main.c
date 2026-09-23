@@ -110,12 +110,15 @@ int main(void) {
     PRINT("Hello from CM4!\r\n");
 
 
+    // SPI initialization
     init_spi();
     test_spi();
 
 
+    // PWM initialization
     pwm_init();
-    update_pwm_duty(0.6f, 0.4f);
+    CyDelay(1000);
+    update_pwm_duty(-0.2f, -0.1f);
 
     for (;;) {
     }

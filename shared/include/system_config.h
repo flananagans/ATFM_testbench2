@@ -9,12 +9,6 @@
 
 #include <stdio.h>
 #include <stdint.h>
-
-////////////// SYSTEM STATE //////////////////////
-uint32_t system_uptime_tick = 0; // system time in PWM ticks
-bool driver_enabled = 0; // 1 for enabled
-uint32_t driver_status = 0; // [0,0,STAT1,STAT2] 
-bool driver_fault = 0; // 1 for fault
  
 ////////////// MOTOR SPECS ///////////////////////
 #define MOTOR_PHASES             2
@@ -73,6 +67,5 @@ bool driver_fault = 0; // 1 for fault
 
 ////////////// PRINTING FUNCTION /////////////////
 #define PRINT(...) printf(__VA_ARGS__); __enable_irq();
-
 
 #endif

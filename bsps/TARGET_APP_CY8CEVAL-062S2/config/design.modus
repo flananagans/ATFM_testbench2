@@ -196,25 +196,11 @@
                         <Alias value="CYBSP_D9"/>
                     </Aliases>
                 </Block>
-                <Block location="ioss[0].port[9].pin[0]">
-                    <Aliases>
-                        <Alias value="CYBSP_A8"/>
-                        <Alias value="CYBSP_J2_2"/>
-                        <Alias value="CYBSP_TRACE_DATA3"/>
-                    </Aliases>
-                </Block>
                 <Block location="ioss[0].port[9].pin[1]">
                     <Aliases>
                         <Alias value="CYBSP_A9"/>
                         <Alias value="CYBSP_J2_4"/>
                         <Alias value="CYBSP_TRACE_DATA2"/>
-                    </Aliases>
-                </Block>
-                <Block location="ioss[0].port[9].pin[2]">
-                    <Aliases>
-                        <Alias value="CYBSP_A10"/>
-                        <Alias value="CYBSP_J2_6"/>
-                        <Alias value="CYBSP_TRACE_DATA1"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[9].pin[3]">
@@ -263,22 +249,10 @@
                         <Alias value="CYBSP_J2_3"/>
                     </Aliases>
                 </Block>
-                <Block location="ioss[0].port[10].pin[2]">
-                    <Aliases>
-                        <Alias value="CYBSP_A2"/>
-                        <Alias value="CYBSP_J2_5"/>
-                    </Aliases>
-                </Block>
                 <Block location="ioss[0].port[10].pin[3]">
                     <Aliases>
                         <Alias value="CYBSP_A3"/>
                         <Alias value="CYBSP_J2_7"/>
-                    </Aliases>
-                </Block>
-                <Block location="ioss[0].port[10].pin[4]">
-                    <Aliases>
-                        <Alias value="CYBSP_A4"/>
-                        <Alias value="CYBSP_J2_9"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[10].pin[5]">
@@ -851,6 +825,92 @@
                         <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
                     </Parameters>
                 </Personality>
+                <Personality template="pin" version="4.0" instance="bAA-C60T8Qw">
+                    <Block location="ioss[0].port[9].pin[0]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_A8"/>
+                            <Alias value="CYBSP_J2_2"/>
+                            <Alias value="CYBSP_TRACE_DATA3"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="0"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="pin" version="4.0" instance="-RRRb6-xrNA">
+                    <Block location="ioss[0].port[9].pin[2]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_A10"/>
+                            <Alias value="CYBSP_J2_6"/>
+                            <Alias value="CYBSP_TRACE_DATA1"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="0"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="pin" version="4.0" instance="2s9Hi7QPcQs">
+                    <Block location="ioss[0].port[10].pin[2]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_A2"/>
+                            <Alias value="CYBSP_J2_5"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="0"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="pin" version="4.0" instance="FWiFsbYVko0">
+                    <Block location="ioss[0].port[10].pin[4]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_A4"/>
+                            <Alias value="CYBSP_J2_9"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="0"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
                 <Personality template="pin" version="4.0" instance="PSruYyS2gbQ">
                     <Block location="ioss[0].port[12].pin[0]" locked="true">
                         <Aliases>
@@ -1229,6 +1289,134 @@
                         <Param id="vddio1Mv" value="3300"/>
                     </Parameters>
                 </Personality>
+                <Personality template="mxs40pwm" version="1.0" instance="ktY866ItVY0">
+                    <Block location="tcpwm[0].cnt[0]" locked="true"/>
+                    <Parameters>
+                        <Param id="ClockPrescaler" value="CY_TCPWM_PWM_PRESCALER_DIVBY_1"/>
+                        <Param id="Compare0" value="1000"/>
+                        <Param id="Compare1" value="16384"/>
+                        <Param id="CountInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="DeadClocks" value="0"/>
+                        <Param id="EnableCompareSwap" value="false"/>
+                        <Param id="EnablePeriodSwap" value="false"/>
+                        <Param id="InterruptSource" value="CY_TCPWM_INT_NONE"/>
+                        <Param id="InvertPwm" value="false"/>
+                        <Param id="InvertPwm_n" value="false"/>
+                        <Param id="KillInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="KillMode" value="CY_TCPWM_PWM_STOP_ON_KILL"/>
+                        <Param id="Period0" value="2000"/>
+                        <Param id="Period1" value="32768"/>
+                        <Param id="PwmAlignment" value="CY_TCPWM_PWM_CENTER_ALIGN"/>
+                        <Param id="PwmMode" value="CY_TCPWM_PWM_MODE_PWM"/>
+                        <Param id="ReloadInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="RunMode" value="CY_TCPWM_PWM_CONTINUOUS"/>
+                        <Param id="StartInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapUnderflowOverflow" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="mxs40timercounter" version="1.0" instance="dUcl_9LdgV8">
+                    <Block location="tcpwm[0].cnt[1]" locked="true"/>
+                    <Parameters>
+                        <Param id="CaptureInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="ClockPrescaler" value="CY_TCPWM_COUNTER_PRESCALER_DIVBY_1"/>
+                        <Param id="Compare0" value="16384"/>
+                        <Param id="Compare1" value="16384"/>
+                        <Param id="CompareOrCapture" value="CY_TCPWM_COUNTER_MODE_CAPTURE"/>
+                        <Param id="CountDirection" value="CY_TCPWM_COUNTER_COUNT_UP"/>
+                        <Param id="CountInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="EnableCompareSwap" value="false"/>
+                        <Param id="InterruptSource" value="CY_TCPWM_INT_NONE"/>
+                        <Param id="Period" value="32768"/>
+                        <Param id="ReloadInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="RunMode" value="CY_TCPWM_COUNTER_CONTINUOUS"/>
+                        <Param id="StartInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="StopInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="mxs40pwm" version="1.0" instance="bgdZ5bLVELE">
+                    <Block location="tcpwm[0].cnt[4]" locked="true"/>
+                    <Parameters>
+                        <Param id="ClockPrescaler" value="CY_TCPWM_PWM_PRESCALER_DIVBY_1"/>
+                        <Param id="Compare0" value="1000"/>
+                        <Param id="Compare1" value="16384"/>
+                        <Param id="CountInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="DeadClocks" value="0"/>
+                        <Param id="EnableCompareSwap" value="false"/>
+                        <Param id="EnablePeriodSwap" value="false"/>
+                        <Param id="InterruptSource" value="CY_TCPWM_INT_NONE"/>
+                        <Param id="InvertPwm" value="false"/>
+                        <Param id="InvertPwm_n" value="false"/>
+                        <Param id="KillInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="KillMode" value="CY_TCPWM_PWM_STOP_ON_KILL"/>
+                        <Param id="Period0" value="2000"/>
+                        <Param id="Period1" value="32768"/>
+                        <Param id="PwmAlignment" value="CY_TCPWM_PWM_CENTER_ALIGN"/>
+                        <Param id="PwmMode" value="CY_TCPWM_PWM_MODE_PWM"/>
+                        <Param id="ReloadInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="RunMode" value="CY_TCPWM_PWM_CONTINUOUS"/>
+                        <Param id="StartInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapUnderflowOverflow" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="mxs40pwm" version="1.0" instance="lW8Oc_E7RKU">
+                    <Block location="tcpwm[0].cnt[5]" locked="true"/>
+                    <Parameters>
+                        <Param id="ClockPrescaler" value="CY_TCPWM_PWM_PRESCALER_DIVBY_1"/>
+                        <Param id="Compare0" value="1000"/>
+                        <Param id="Compare1" value="16384"/>
+                        <Param id="CountInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="DeadClocks" value="0"/>
+                        <Param id="EnableCompareSwap" value="false"/>
+                        <Param id="EnablePeriodSwap" value="false"/>
+                        <Param id="InterruptSource" value="CY_TCPWM_INT_NONE"/>
+                        <Param id="InvertPwm" value="false"/>
+                        <Param id="InvertPwm_n" value="false"/>
+                        <Param id="KillInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="KillMode" value="CY_TCPWM_PWM_STOP_ON_KILL"/>
+                        <Param id="Period0" value="2000"/>
+                        <Param id="Period1" value="32768"/>
+                        <Param id="PwmAlignment" value="CY_TCPWM_PWM_CENTER_ALIGN"/>
+                        <Param id="PwmMode" value="CY_TCPWM_PWM_MODE_PWM"/>
+                        <Param id="ReloadInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="RunMode" value="CY_TCPWM_PWM_CONTINUOUS"/>
+                        <Param id="StartInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapUnderflowOverflow" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="mxs40pwm" version="1.0" instance="XxEf_5MdopM">
+                    <Block location="tcpwm[0].cnt[7]" locked="true"/>
+                    <Parameters>
+                        <Param id="ClockPrescaler" value="CY_TCPWM_PWM_PRESCALER_DIVBY_1"/>
+                        <Param id="Compare0" value="1000"/>
+                        <Param id="Compare1" value="16384"/>
+                        <Param id="CountInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="DeadClocks" value="0"/>
+                        <Param id="EnableCompareSwap" value="false"/>
+                        <Param id="EnablePeriodSwap" value="false"/>
+                        <Param id="InterruptSource" value="CY_TCPWM_INT_NONE"/>
+                        <Param id="InvertPwm" value="false"/>
+                        <Param id="InvertPwm_n" value="false"/>
+                        <Param id="KillInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="KillMode" value="CY_TCPWM_PWM_STOP_ON_KILL"/>
+                        <Param id="Period0" value="2000"/>
+                        <Param id="Period1" value="32768"/>
+                        <Param id="PwmAlignment" value="CY_TCPWM_PWM_CENTER_ALIGN"/>
+                        <Param id="PwmMode" value="CY_TCPWM_PWM_MODE_PWM"/>
+                        <Param id="ReloadInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="RunMode" value="CY_TCPWM_PWM_CONTINUOUS"/>
+                        <Param id="StartInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapInput" value="CY_TCPWM_INPUT_DISABLED"/>
+                        <Param id="SwapUnderflowOverflow" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
             </BlockConfig>
             <Netlist>
                 <Net>
@@ -1276,6 +1464,22 @@
                     <Port name="scb[5].spi_select0[0]"/>
                 </Net>
                 <Net>
+                    <Port name="ioss[0].port[9].pin[0].digital_out[0]"/>
+                    <Port name="tcpwm[0].cnt[4].line[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[9].pin[2].digital_out[0]"/>
+                    <Port name="tcpwm[0].cnt[5].line[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[10].pin[2].digital_out[0]"/>
+                    <Port name="tcpwm[0].cnt[7].line[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[10].pin[4].digital_out[0]"/>
+                    <Port name="tcpwm[0].cnt[0].line[0]"/>
+                </Net>
+                <Net>
                     <Port name="ioss[0].port[12].pin[0].digital_inout[0]"/>
                     <Port name="scb[6].spi_mosi[0]"/>
                 </Net>
@@ -1295,6 +1499,14 @@
                     <Port name="peri[0].div_8[2].clk[0]"/>
                     <Port name="scb[5].clock[0]"/>
                     <Port name="scb[6].clock[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[0].div_8[1].clk[0]"/>
+                    <Port name="tcpwm[0].cnt[0].clock[0]"/>
+                    <Port name="tcpwm[0].cnt[1].clock[0]"/>
+                    <Port name="tcpwm[0].cnt[4].clock[0]"/>
+                    <Port name="tcpwm[0].cnt[5].clock[0]"/>
+                    <Port name="tcpwm[0].cnt[7].clock[0]"/>
                 </Net>
                 <Mux name="sense" location="csd[0].csd[0]">
                     <Arm>
