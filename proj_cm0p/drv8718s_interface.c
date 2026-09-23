@@ -138,6 +138,7 @@ bool drv8718s_configure() {
     drv8718s_clear_faults();
     drv8718s_enable_and_configure();
 
+    return true;
 }
 
 /**
