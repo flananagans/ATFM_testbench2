@@ -198,9 +198,9 @@ void drv8718s_configure_pwm_mapping(void) {
  */
 void drv8718s_disable_vds_monitoring(void)
 {
-    drv8718s_spi_clear_faults();
-    drv8718s_spi_write_register(DRV8718S_REG_DRV_CTRL1, 0xEF);
-    drv8718s_spi_clear_faults();
+    drv8718s_clear_faults();
+    drv8718s_write_register(DRV8718S_REG_DRV_CTRL1, 0xEF);
+    drv8718s_clear_faults();
 }
 
 /**
@@ -236,7 +236,7 @@ void drv8718s_enable_and_configure(void)
     drv8718s_write_register(DRV8718S_REG_IC_CTRL1, ic_ctrl1);
     Cy_SysLib_Delay(10);
 
-    drv8718s_spi_clear_faults();
+    drv8718s_clear_faults();
 }
 
 
@@ -298,7 +298,7 @@ void drv8718s_write_register(uint8_t addr, uint8_t data)
     uint8_t tx_buffer[2] = {(cmd >> 8) & 0xFF, cmd & 0xFF};
     uint8_t rx_buffer[2] = {0, 0};
 	
-    (void)drv8718s_transaction(tx_buffer, rx_buffer, 2);
+    (void)drv8718s_spi_transaction(tx_buffer, rx_buffer, 2);
     Cy_SysLib_DelayUs(100);
 }
 
@@ -326,7 +326,7 @@ uint8_t drv8718s_read_register(uint8_t addr) {
 /**
  * Read the status register on the DRV8718s
  */
-uint8_t drv8718s_spi_read_status(void)
+uint8_t drv8718s_read_status(void)
 {
     return drv8718s_read_register(DRV8718S_REG_IC_STAT1);
 }
@@ -334,7 +334,7 @@ uint8_t drv8718s_spi_read_status(void)
 /**
  * Read the status2 register on the DRV8718s
  */
-uint8_t drv8718s_spi_read_status2(void)
+uint8_t drv8718s_read_status2(void)
 {
     return drv8718s_read_register(DRV8718S_REG_IC_STAT2);
 }

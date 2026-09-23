@@ -499,3 +499,6 @@
 469	787	8118162874224673	build/APP_CY8CEVAL-062S2/Debug/proj_cm0p.elf	b821f02f2c7d2600
 58	476	8118163085434205	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/local/drv8718s_interface.o	ddd3bbac9e413718
 476	794	8118163089604204	build/APP_CY8CEVAL-062S2/Debug/proj_cm0p.elf	b821f02f2c7d2600
+3539	6052	8118817830078237	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/local/main.o	c4037439c463023b
+73	736	8118820948128870	D:/MIT_biomechatronics/MotorTest/ModusToolbox/ATFM_testbench2/proj_cm0p/build/Debug/local/drv8718s_interface.o	ddd3bbac9e413718
+736	5670	8118820954754519	build/APP_CY8CEVAL-062S2/Debug/proj_cm0p.elf	b821f02f2c7d2600
