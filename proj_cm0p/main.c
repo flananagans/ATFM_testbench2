@@ -79,7 +79,6 @@ int main(void) {
 
     PRINT("Status: 0x%08X\r\n", driver_status);
 
-
     for (;;) {
     }
 

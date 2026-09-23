@@ -11,11 +11,6 @@
 #include "drv8718s_interface.h"
 #include "system_config.h"
 
-/************* PUBLIC VARIABLES DECLARATIONS **************/
-bool driver_enabled = false;
-bool driver_fault = false;
-uint32_t driver_status = 0; // [0,0,STAT1,STAT2] 
-
 /************* PRIVATE FUNCTION DECLARATIONS **************/
 
 /////////////// STARTUP //////////////////////

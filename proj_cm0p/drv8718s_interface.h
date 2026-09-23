@@ -11,11 +11,6 @@
  *    enabling/disabling driver, etc.
  */
 
- ////////////// VARIABLES ////////////////////
-extern bool driver_enabled;
-extern bool driver_fault;
-extern uint32_t driver_status;
-
 /////////////// STARTUP //////////////////////
 bool drv8718s_init(void);
 

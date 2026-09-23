@@ -46,6 +46,7 @@
 #include "cy_retarget_io.h"
 
 #include "system_config.h"
+#include "pwm_interface.h"
 
 void init_spi(void) {
 
@@ -111,6 +112,10 @@ int main(void) {
 
     init_spi();
     test_spi();
+
+
+    pwm_init();
+    update_pwm_duty(0.6f, 0.4f);
 
     for (;;) {
     }
