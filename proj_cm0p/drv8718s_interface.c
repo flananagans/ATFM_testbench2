@@ -29,7 +29,7 @@ void drv8718s_disable_vds_monitoring(void);
 
 /////////////// SPI UTILITIES ///////////////
 bool init_spi(void);
-bool drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length);
+void drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length);
 uint8_t drv8718s_read_register(uint8_t addr);
 void drv8718s_write_register(uint8_t addr, uint8_t data);
 uint8_t drv8718s_read_status(void);
@@ -46,6 +46,8 @@ bool drv8718s_init(void) {
   if(!init_spi()) {
     return false;
   }
+  
+  PRINT("SPI started!\r\n");
 
   if(!drv8718s_configure()) {
     return false;
@@ -123,7 +125,7 @@ bool drv8718s_configure() {
 
     // Initialize GPIO control pins
     drv8718s_init_gpio();
-    
+
     drv8718s_clear_faults();
 
     // Configure PWM mapping
@@ -136,6 +138,7 @@ bool drv8718s_configure() {
     drv8718s_disable_vds_monitoring();
 
     drv8718s_clear_faults();
+
     drv8718s_enable_and_configure();
 
     return true;
@@ -264,13 +267,13 @@ bool init_spi(void) {
 /**
  * SPI transaction utility (blocking)
  */
-bool drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length)
+void drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length)
 {
     /* Clear FIFOs*/
-    Cy_SCB_SPI_ClearTxFifoStatus(SPI_DRV, 0xFFFFFFFF); // clear all statuses
-    Cy_SCB_ClearTxFifo(SPI_DRV);
-    Cy_SCB_SPI_ClearRxFifoStatus(SPI_DRV, 0xFFFFFFFF); // clear all statuses
-    Cy_SCB_ClearRxFifo(SPI_DRV);
+    //Cy_SCB_SPI_ClearTxFifoStatus(SPI_DRV, 0xFFFFFFFF); // clear all statuses
+    //Cy_SCB_ClearTxFifo(SPI_DRV);
+    //Cy_SCB_SPI_ClearRxFifoStatus(SPI_DRV, 0xFFFFFFFF); // clear all statuses
+    //Cy_SCB_ClearRxFifo(SPI_DRV);
 
     /* Start transfer */
     Cy_SCB_SPI_WriteArrayBlocking(SPI_DRV, tx_data, length);
@@ -282,8 +285,8 @@ bool drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length)
 
     /* Read received data */
     Cy_SCB_ReadArrayBlocking(SPI_DRV, rx_data, length);
-
-    return true;
+    
+    return;
 }
 
 /**
@@ -298,7 +301,7 @@ void drv8718s_write_register(uint8_t addr, uint8_t data)
     uint8_t tx_buffer[2] = {(cmd >> 8) & 0xFF, cmd & 0xFF};
     uint8_t rx_buffer[2] = {0, 0};
 	
-    (void)drv8718s_spi_transaction(tx_buffer, rx_buffer, 2);
+    drv8718s_spi_transaction(tx_buffer, rx_buffer, 2);
     Cy_SysLib_DelayUs(100);
 }
 
@@ -311,12 +314,7 @@ uint8_t drv8718s_read_register(uint8_t addr) {
     uint8_t rx_buffer[2] = {0, 0};
 
     
-    cy_rslt_t result = drv8718s_spi_transaction(tx_buffer, rx_buffer, 2);
-    
-    if (result != CY_RSLT_SUCCESS) {
-        PRINT("ERROR: SPI transaction failed!\r\n");
-        return 0x00;
-    }
+    drv8718s_spi_transaction(tx_buffer, rx_buffer, 2);
 
     uint16_t response = ((uint16_t)rx_buffer[0] << 8) | rx_buffer[1];
     return response & DRV8718S_DATA_MASK;

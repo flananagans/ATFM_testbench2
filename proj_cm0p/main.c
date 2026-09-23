@@ -73,8 +73,12 @@ int main(void) {
 
     drv8718s_init();
 
+    PRINT("Driver initialized!\r\n");
+
     drv8718s_check_status();
-    
+
+    PRINT("Status: 0x%08X\r\n", driver_status);
+
 
     for (;;) {
     }
