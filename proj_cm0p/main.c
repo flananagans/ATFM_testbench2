@@ -73,6 +73,9 @@ int main(void) {
 
     drv8718s_init();
 
+    drv8718s_check_status();
+    
+
     for (;;) {
     }
 
