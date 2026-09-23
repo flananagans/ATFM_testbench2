@@ -270,9 +270,9 @@ bool init_spi(void) {
 void drv8718s_spi_transaction(uint8_t *tx_data, uint8_t *rx_data, size_t length)
 {
     /* Clear FIFOs*/
-    Cy_SCB_ClearTxFifo(SPI_DRV); // clear buffer
+    Cy_SCB_ClearTxFifo(SPI_DRV); // clear buffer before status
     Cy_SCB_SPI_ClearTxFifoStatus(SPI_DRV, CY_SCB_SPI_TX_INTR_MASK); // clear all statuses
-    Cy_SCB_ClearRxFifo(SPI_DRV); // clear buffer
+    Cy_SCB_ClearRxFifo(SPI_DRV); // clear buffer before status
     Cy_SCB_SPI_ClearRxFifoStatus(SPI_DRV, CY_SCB_SPI_RX_INTR_MASK); // clear all statuses
 
     /* Start transfer */
